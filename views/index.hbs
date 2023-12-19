@@ -1,0 +1,15 @@
+<form action="/add-todo" method="POST">
+  <input type="text" name="todo" placeholder="Add new todo" />
+  <button type="submit">Add Todo</button>
+</form>
+
+<ul>
+  {{#each todos}}
+    <li>
+      {{this.description}}
+      <form action="/remove-todo/{{@index}}" method="POST">
+        <button type="submit">Remove</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>
